@@ -36,6 +36,10 @@ export class ProfileInputComponent implements OnInit {
         ))
     }
 
+    increaseAge(){
+        this.store.dispatch(profileReducer.increaseAge())
+    }
+
     ngOnInit(): void {
         this.setName('carl');
         this.setAge(500);

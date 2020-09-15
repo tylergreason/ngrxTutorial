@@ -13,6 +13,9 @@ const _profileReducer = createReducer(
     }),
     on(profileActions.setAge, (state, payload) => {
         return {...state, age: payload.age}
+    }),
+    on(profileActions.increaseAge, (state) => {
+        return {...state, age: state.age + 1}
     })
 )
 
