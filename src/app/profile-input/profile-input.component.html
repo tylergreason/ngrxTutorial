@@ -1,5 +1,7 @@
-<div>Current name: {{ name$ | async}}</div>
-<div>Currnt age: {{ age$ | async}}</div>
+<label>Current name:</label>
+<div>{{ name$ | async}}</div>
+<label>Current age:</label>
+<div>{{ age$ | async}}</div>
 <button (click)="increaseAge()">Increase Age</button>
 <label>Enter New Name:</label>
 

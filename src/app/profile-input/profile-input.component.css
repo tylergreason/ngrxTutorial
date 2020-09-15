@@ -1,0 +1,13 @@
+div {
+    font-weight: bold;
+    min-height: 1em; 
+    padding: 0px; 
+}
+
+label {
+    display: block;
+}
+
+button {
+    margin: 10px; 
+}

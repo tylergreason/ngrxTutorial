@@ -15,7 +15,10 @@ import { environment } from '../environments/environment'; // Angular CLI enviro
 @NgModule({
   imports: [
       BrowserModule,
-      StoreModule.forRoot({ count: counterReducer, profile: profileReducer}),
+      StoreModule.forRoot({ 
+          count: counterReducer, 
+          profile: profileReducer
+        }),
       StoreDevtoolsModule.instrument(
         // maxAge: 25, // Retains last 25 states
         // logOnly: environment.production, // Restrict extension to log-only mode
