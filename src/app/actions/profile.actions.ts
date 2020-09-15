@@ -7,5 +7,5 @@ export const setName = createAction(
 
 export const setAge = createAction(
     '[Profile Component] SetAge', 
-    props<{age: number}>()
+    props<{age: number;}>()
 )

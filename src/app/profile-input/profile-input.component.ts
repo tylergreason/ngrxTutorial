@@ -14,11 +14,14 @@ export class ProfileInputComponent implements OnInit {
 
     profile$: Observable<string>
     name$: Observable<string>
+    age$: Observable<number>
+
     constructor(
         private store: Store<{}>,
     ) { 
         this.profile$ = store.pipe(select('profile'));
-        this.name = store.pipe(select('name'));
+        this.name$ = this.profile$.pipe(select('name'));
+        this.age$ = this.profile$.pipe(select('age'))
     }
 
     setName(nameString: string){
@@ -27,14 +30,15 @@ export class ProfileInputComponent implements OnInit {
             ))
     }
 
-    setAge(age: number){
+    setAge(newAge: number){
         this.store.dispatch(profileReducer.setAge(
-            {age: 60}
+            {age: newAge}
         ))
     }
 
     ngOnInit(): void {
         this.setName('carl');
+        this.setAge(500);
         console.log(this.profile$);
         
     }
