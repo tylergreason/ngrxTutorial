@@ -5,19 +5,17 @@ export const initialState = {name: "initial name", age: 50};
 
 const _profileReducer = createReducer(
     initialState, 
-    on(profileActions.setName, (state, payload) => {
-        // console.log(state);
-        
+    on(profileActions.setName, (state, payload) => { 
         return {...state, name: payload.name}
-        // return {...state, name: payload.newName}
     }),
     on(profileActions.setAge, (state, payload) => {
         return {...state, age: payload.age}
     }),
     on(profileActions.increaseAge, (state) => {
         return {...state, age: state.age + 1}
-    })
+    }),
 )
+
 
 export function profileReducer(state,action){
     return _profileReducer(state, action); 

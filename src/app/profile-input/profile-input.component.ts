@@ -12,9 +12,9 @@ import * as profileReducer from '../actions/profile.actions';
 
 export class ProfileInputComponent implements OnInit {
 
-    profile$: Observable<string>
-    name$: Observable<string>
-    age$: Observable<number>
+    // profile$: Observable<string>
+    // name$: Observable<string>
+    // age$: Observable<number>
 
     constructor(
         private store: Store<{}>,
@@ -41,10 +41,6 @@ export class ProfileInputComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.setName('carl');
-        this.setAge(500);
-        console.log(this.profile$);
-        
     }
 
 }
