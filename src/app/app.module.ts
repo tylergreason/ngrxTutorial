@@ -5,16 +5,18 @@ import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store'; 
 import { counterReducer } from './reducers/counter.reducer';
-import { profileReducer } from './reducers/profile.reducer'
+import { profileReducer } from './reducers/profile.reducer'; 
+
 import { MyCounterComponent } from './my-counter/my-counter.component';
+import { ProfileInputComponent } from './profile-input/profile-input.component';
 
 
 @NgModule({
   imports: [
       BrowserModule,
-      StoreModule.forRoot({ count: counterReducer, test:0})
+      StoreModule.forRoot({ count: counterReducer, profile:profileReducer})
 ],
-  declarations: [AppComponent, MyCounterComponent],
+  declarations: [AppComponent, MyCounterComponent, ProfileInputComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

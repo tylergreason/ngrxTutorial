@@ -1,4 +1,4 @@
-import { createActions, props } from '@nrgx/store'; 
+import { createAction, props } from '@ngrx/store'; 
 
 export const setName = createAction(
     '[Name Component] SetName',

@@ -10,6 +10,6 @@ const _profileReducer = createReducer(
     })
 )
 
-export function profileReducter(state,action){
+export function profileReducer(state,action){
     return _profileReducer(state, action); 
 }
