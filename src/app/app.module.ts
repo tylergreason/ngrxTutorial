@@ -9,12 +9,17 @@ import { profileReducer } from './reducers/profile.reducer';
 
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { ProfileInputComponent } from './profile-input/profile-input.component';
-
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment'; // Angular CLI environment
 
 @NgModule({
   imports: [
       BrowserModule,
-      StoreModule.forRoot({ count: counterReducer, profile:profileReducer})
+      StoreModule.forRoot({ count: counterReducer, profile: profileReducer}),
+      StoreDevtoolsModule.instrument(
+        // maxAge: 25, // Retains last 25 states
+        // logOnly: environment.production, // Restrict extension to log-only mode
+      ),
 ],
   declarations: [AppComponent, MyCounterComponent, ProfileInputComponent],
   bootstrap: [AppComponent],

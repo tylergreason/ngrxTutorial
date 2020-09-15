@@ -1,16 +1,18 @@
 import { createReducer, on } from '@ngrx/store'; 
-import {setName} from '../actions/profile.actions'; 
+import * as profileActions from '../actions/profile.actions'; 
 
-export const initialState = {name: "initial name"}; 
+export const initialState = {name: "initial name", age: 50}; 
 
 const _profileReducer = createReducer(
     initialState, 
-    on(setName, (state, payload) => {
-        console.log(state);
+    on(profileActions.setName, (state, payload) => {
         // console.log(state);
         
-        return payload.name
+        return {...state, name: payload.name}
         // return {...state, name: payload.newName}
+    }),
+    on(profileActions.setAge, (state, payload) => {
+        return payload.age
     })
 )
 
