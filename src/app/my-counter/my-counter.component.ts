@@ -18,15 +18,15 @@ export class MyCounterComponent implements OnInit {
   }
 
   increment(){
-
+    this.store.dispatch(increment({}));
   }
   
   decrement(){
-
+    this.store.dispatch(decrement()); 
   }
 
   reset(){
-
+    this.store.dispatch(reset()); 
   }
 
   ngOnInit(): void {
