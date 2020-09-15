@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Store, select} from '@ngrx/store'; 
-import { Observable } from 'rxjs'; 
-import * as profileActions from '../actions/profile.actions'; 
+import { Observable } from 'rxjs';  
+import { setName } from '../actions/profile.actions'; 
 
 
 @Component({
@@ -12,22 +12,22 @@ import * as profileActions from '../actions/profile.actions';
 
 export class ProfileInputComponent implements OnInit {
 
-    name$: Observable<string>;
+    profile$: Observable<string>
 
     constructor(
         private store: Store<{}>,
     ) { 
-        this.name$ = store.pipe(select('name'))
-        console.log(this.name$);   
+        this.profile$ = store.pipe(select('profile'));
     }
 
     setName(nameString: string){
-        this.store.dispatch(profileActions.setName(
+        this.store.dispatch(setName(
             {name: nameString}
             ))
     }
 
     ngOnInit(): void {
+        this.setName('carl');
     }
 
 }
