@@ -22,6 +22,7 @@ export class ProfileInputComponent implements OnInit {
         this.profile$ = store.pipe(select('profile'));
         this.name$ = this.profile$.pipe(select('name'));
         this.age$ = this.profile$.pipe(select('age'))
+        this.ageIncrement = 10; 
     }
 
     setName(nameString: string){
@@ -36,8 +37,18 @@ export class ProfileInputComponent implements OnInit {
         ))
     }
 
-    increaseAge(){
-        this.store.dispatch(profileReducer.increaseAge())
+    increaseAge(num: number){
+        this.store.dispatch(profileReducer.increaseAge(
+            {value: num}
+        ))
+    }
+
+    modulateAgeIncrease = (direction : boolean)=>{
+        direction === true
+        ?
+        this.ageIncrement += 1
+        :
+        this.ageIncrement -= 1
     }
 
     ngOnInit(): void {

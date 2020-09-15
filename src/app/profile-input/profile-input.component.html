@@ -2,7 +2,11 @@
 <div>{{ name$ | async}}</div>
 <label>Current age:</label>
 <div>{{ age$ | async}}</div>
-<button (click)="increaseAge()">Increase Age</button>
+<label>Increase Age By:</label>
+<button (click)="modulateAgeIncrease(true)">+</button>
+<div [value]="ageIncrement"> {{ageIncrement}}</div>
+<button (click)="modulateAgeIncrease(false)">-</button>
+<button (click)="increaseAge(ageIncrement)">Increase Age</button>
 <label>Enter New Name:</label>
 
 <input [value]="name$ | async" (input)="setName($event.target.value)"type="text">
